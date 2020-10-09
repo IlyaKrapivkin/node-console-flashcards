@@ -1,21 +1,30 @@
 const fs = require('fs');
-const Card = require('./model.js');
-const view = require('./view.js');
+const card = require('./model.js');
+const View = require('./view.js');
 const readlineSync = require('readline-sync');
 
 class Controler {
   constructor(filename) {
     this.filename = filename;
-    this.card1 = new Card(this.filename);
   }
 
   cycle() {
-    this.card1.readCard();
-    for (let i = 0; i < this.card1.questArr.length; i += 1) {
-      this.card1.step = i;
-      view.View.draw(this.card1);
+    let card1 = new card.Card(this.filename);
+
+    let string = fs.readFileSync(this.filename, 'utf8').replace(/\n{2}/, '\n').split('\n');
+
+    for (let i = 0; i < card1.questArr.length; i += 2) {
+      card1.questArr.push(string[i]);
     }
-    view.View.drawFinal();
+    for (let i = 1; i < card1.questArr.length; i += 2) {
+      card1.ansArr.push(string[i]);
+    }
+
+    for (let i = 0; i < card1.questArr.length; i += 1) {
+      card1.step = i;
+      View.draw(card1);
+    }
+    View.drawFinal(card1);
   }
 }
 
