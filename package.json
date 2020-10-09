@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "eslint-plugin-jasmine": "^4.1.1",
-    "readline-sync": "^1.4.10"
+    "readline-sync": "^1.4.10",
+    "yosay": "^2.0.2"
   }
 }

@@ -1,4 +1,5 @@
 const fs = require('fs');
+const yosay = require('yosay');
 const readlineSync = require('readline-sync');
 const { Controler } = require('./controler.js');
 // const {Card} = require('./model.js');

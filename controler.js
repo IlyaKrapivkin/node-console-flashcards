@@ -1,5 +1,6 @@
 const fs = require('fs');
 const readlineSync = require('readline-sync');
+const yosay = require('yosay');
 const { Card } = require('./model.js');
 const { View } = require('./view.js');
 
