@@ -1,6 +1,4 @@
 const fs = require('fs');
-// const {Controler} = require('./controler.js');
-// const {View} = require('./view.js');
 
 class Card {
   constructor(filename) {

@@ -1,6 +1,4 @@
 const readlineSync = require('readline-sync');
-// const {Card} = require('./model.js')
-// const {Controler} = require('./controler.js');
 
 class View {
   constructor(card) {
