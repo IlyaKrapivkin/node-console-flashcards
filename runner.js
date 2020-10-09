@@ -1,8 +1,13 @@
 const fs = require('fs');
 const readlineSync = require('readline-sync');
+const {Controler} = require('./controler.js');
+const {Card} = require('./model.js');
+const {View} = require('./view.js');
 
-const controler = require('./controler.js');
+let filename = process.argv[2];
 
-let path = process.argv[2];
-let go = new controler.Controler(path);
+let card = new Card(filename);
+let view = new View(card);
+let go = new Controler(filename, card, view);
+
 go.cycle();

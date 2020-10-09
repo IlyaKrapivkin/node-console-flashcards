@@ -1,24 +1,24 @@
 const readlineSync = require('readline-sync');
-const card = require('./model.js');
-const controler = require('./controler.js');
+// const {Card} = require('./model.js')
+// const {Controler} = require('./controler.js');
 
 class View {
-  constructor(obj) {
-    this.obj = obj;
+  constructor(card) {
+    this.card = card;
   }
 
   draw() {
-    let answer = readlineSync.question(`${this.obj.questArr[this.obj.step]}`);
-    if(answer === this.obj.ansArr[this.obj.step]) {
-      console.log ('correct!');
-      this.obj.score += 1;
+    let answer = readlineSync.question(`${this.card.questArr[this.card.step]}\n`);
+    if (answer === this.card.ansArr[this.card.step]) {
+      console.log ('Correct!\n');
+      this.card.score += 1;
     } else {
-      console.log('Wrong!');
+      console.log('Wrong!\n');
     }
   }
 
   drawFinal() {
-    console.log(`CARD WAS FINISHED!\nYour score is: ${this.obj.score}/${this.obj.questArr.length}`);
+    console.log(`CARD WAS FINISHED!\nYour score is: ${this.card.score}/${this.card.questArr.length}`);
   }
 }
 
