@@ -1,5 +1,6 @@
 const fs = require('fs');
-
+const controler = require('./controler.js');
+const view = require('./view.js');
 
 //model of card
 class Card {
@@ -7,27 +8,19 @@ class Card {
     this.filename = filename;
     this.questArr = [];
     this.ansArr = [];
+    this.step = 0;
+    this.score = 0;
   }
+
   readCard() {
-    let string = fs.readFileSync(filename, 'utf8')
-      .replace(/\n{2}/, '\n')
-      .split('\n');
-    for (let i = 0; i < string.length; i += 2) {
-      questArr.push(string[i]);
-    };
-    for (let i = 1; i < string.length; i += 2) {
-      ansArr.push(string[i]);
-    };
-  };
-};
-
-
-
-
-
-
-
-
-
+    let string = fs.readFileSync(this.filename, 'utf8').replace(/\n{2}/, '\n').split('\n');
+    for (let i = 0; i < this.string.length; i += 2) {
+      this.questArr.push(string[i]);
+    }
+    for (let i = 1; i < this.string.length; i += 2) {
+      this.ansArr.push(string[i]);
+    }
+  }
+}
 
 module.exports = { Card };
