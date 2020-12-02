@@ -6,9 +6,9 @@ const { View } = require('./view.js');
 
 class Controler {
   constructor() {
-    this.arrPaths = ['nighthawk_flashcard_data.txt',
-      'otter_flashcard_data.txt',
-      'raccoon_flashcard_data.txt'];
+    this.arrPaths = ['./flashcards/nighthawk_flashcard_data.txt',
+      './flashcards/otter_flashcard_data.txt',
+      './flashcards/raccoon_flashcard_data.txt'];
     this.arrScore = [0, 0, 0];
   }
 
